@@ -9,14 +9,74 @@
   body {
     font-family: "Noto Sans TC", sans-serif;
     margin: 0;
-    background: #FFF9F0; /* 奶油米白 */
+    background: #FFF9F0;
   }
 
+  /* ====== 左上漢堡按鈕 ====== */
+  .menu-btn {
+    position: fixed;
+    top: 18px;
+    left: 18px;
+    font-size: 28px;
+    color: #6B5E55;
+    cursor: pointer;
+    z-index: 9999;
+  }
+
+  /* ====== 側邊滑出選單 ====== */
+  .side-menu {
+    position: fixed;
+    top: 0;
+    left: -70%;
+    width: 70%;
+    height: 100%;
+    background: #FFF9F0;
+    box-shadow: 3px 0 15px rgba(0,0,0,0.15);
+    padding: 20px;
+    transition: 0.3s;
+    z-index: 9998;
+  }
+
+  .menu-header {
+    font-size: 20px;
+    font-weight: 700;
+    padding-bottom: 20px;
+    color: #6C5840;
+  }
+
+  .side-menu a {
+    display: block;
+    padding: 14px 0;
+    color: #5A4A42;
+    text-decoration: none;
+    font-size: 18px;
+    border-bottom: 1px solid #F1E7DA;
+  }
+
+  .side-menu a:hover {
+    color: #B98A65;
+  }
+
+  /* 遮罩 */
+  .overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.4);
+    opacity: 0;
+    pointer-events: none;
+    transition: 0.3s;
+    z-index: 9990;
+  }
+
+  /* ====== 首頁內容 ====== */
   .container {
     width: 90%;
     margin: auto;
     text-align: center;
-    padding: 40px 0;
+    padding: 80px 0 40px; /* 預留漢堡選單空間 */
   }
 
   h1 {
@@ -49,7 +109,7 @@
   .card-title {
     font-size: 18px;
     font-weight: 600;
-    margin: 10px 0;
+    margin-bottom: 6px;
     color: #4A3F39;
   }
 
@@ -58,7 +118,6 @@
     color: #857a74;
   }
 
-  /* 手機 RWD */
   @media (max-width: 420px) {
     .grid {
       grid-template-columns: 1fr;
@@ -69,6 +128,44 @@
 </head>
 
 <body>
+
+<!-- 🔥 左上漢堡按鈕 -->
+<div class="menu-btn" onclick="toggleMenu()">☰</div>
+
+<!-- 🔥 側邊滑出選單（已改成店長推薦） -->
+<div id="sideMenu" class="side-menu">
+  <div class="menu-header">板新店 商品分類</div>
+
+  <a href="#">✨ 最新商品</a>
+  <a href="#">🔥 熱銷排行</a>
+  <a href="#">🧴 頭皮保養</a>
+  <a href="#">🫧 洗護髮</a>
+  <a href="#">💇‍♀️ 造型品</a>
+  <a href="#">🎁 居家組合</a>
+  <a href="#">⭐ 店長推薦</a>
+  <a href="#">📍 門市資訊</a>
+</div>
+
+<div id="overlay" class="overlay" onclick="toggleMenu()"></div>
+
+<script>
+function toggleMenu() {
+  const menu = document.getElementById("sideMenu");
+  const overlay = document.getElementById("overlay");
+
+  if (menu.style.left === "0px") {
+    menu.style.left = "-70%";
+    overlay.style.opacity = "0";
+    overlay.style.pointerEvents = "none";
+  } else {
+    menu.style.left = "0px";
+    overlay.style.opacity = "1";
+    overlay.style.pointerEvents = "auto";
+  }
+}
+</script>
+
+<!-- ====== 首頁主要內容 ====== -->
 <div class="container">
 
   <h1>板新店 · 商品專區</h1>
@@ -99,5 +196,6 @@
   </div>
 
 </div>
+
 </body>
 </html>
