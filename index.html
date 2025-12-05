@@ -6,99 +6,97 @@
 <title>板新店 · 商品專區</title>
 
 <style>
-    body {
-        font-family: "Noto Sans TC", sans-serif;
-        margin: 0;
-        padding: 0;
-        background: #FFF9F3; /* 奶油米白 */
-    }
+  body {
+    font-family: "Noto Sans TC", sans-serif;
+    margin: 0;
+    background: #FFF9F0; /* 奶油米白 */
+  }
 
-    .container { width: 90%; margin: auto; padding: 30px 0; }
+  .container {
+    width: 90%;
+    margin: auto;
+    text-align: center;
+    padding: 40px 0;
+  }
 
-    h1 {
-        text-align: center;
-        color: #333;
-        margin-bottom: 10px;
-    }
+  h1 {
+    font-size: 26px;
+    font-weight: 600;
+    margin-bottom: 10px;
+    color: #5A4A42;
+  }
 
-    .note {
-        text-align: center;
-        font-size: 14px;
-        color: #777;
-        margin-bottom: 30px;
-    }
+  p.sub {
+    font-size: 14px;
+    color: #7A6F69;
+    margin-bottom: 30px;
+  }
 
+  /* 分類卡片 */
+  .grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 18px;
+  }
+
+  .card {
+    background: #FFFFFF;
+    border-radius: 12px;
+    padding: 20px 10px;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.07);
+  }
+
+  .card-title {
+    font-size: 18px;
+    font-weight: 600;
+    margin: 10px 0;
+    color: #4A3F39;
+  }
+
+  .card-sub {
+    font-size: 13px;
+    color: #857a74;
+  }
+
+  /* 手機 RWD */
+  @media (max-width: 420px) {
     .grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
-        gap: 20px;
+      grid-template-columns: 1fr;
     }
-
-    .card {
-        background: #ffffff;
-        border-radius: 16px;
-        padding: 15px;
-        text-align: center;
-        cursor: pointer;
-        transition: 0.25s;
-    }
-
-    .card:hover {
-        transform: translateY(-5px);
-        box-shadow: 0 8px 18px rgba(0,0,0,0.1);
-    }
-
-    .green { background: #EAF2E5; }
-    .cream { background: #F6EEDF; }
-    .pink { background: #F8E7ED; }
-    .blue { background: #EAF2F8; }
-
-    .card-title { font-weight: bold; color: #333; margin-top: 10px; }
-    .card-desc { font-size: 13px; color: #666; margin-top: 5px; }
+  }
 </style>
+
 </head>
 
 <body>
 <div class="container">
 
-<h1>板新店 · 商品專區</h1>
-<p class="note">目前僅提供「店內取貨」，無宅配服務喔 (´▽`)ﾉ</p>
+  <h1>板新店 · 商品專區</h1>
+  <p class="sub">目前僅提供「店內取貨」，無宅配服務喔(´▽`)ﾉ</p>
 
-<div class="grid">
+  <div class="grid">
+    
+    <div class="card">
+      <div class="card-title">頭皮保養</div>
+      <div class="card-sub">出油、敏感、頭皮癢專區</div>
+    </div>
 
-    <a href="scalp/index.html">
-        <div class="card green">
-            <div>[圖片]</div>
-            <div class="card-title">頭皮保養</div>
-            <div class="card-desc">出油 · 敏感 · 頭皮癢</div>
-        </div>
-    </a>
+    <div class="card">
+      <div class="card-title">洗護髮</div>
+      <div class="card-sub">洗髮＋護髮保養系列</div>
+    </div>
 
-    <a href="haircare/index.html">
-        <div class="card cream">
-            <div>[圖片]</div>
-            <div class="card-title">洗護髮</div>
-            <div class="card-desc">洗髮 · 保濕 · 修護</div>
-        </div>
-    </a>
+    <div class="card">
+      <div class="card-title">造型品</div>
+      <div class="card-sub">油蠟、霧面、造型噴霧</div>
+    </div>
 
-    <a href="styling/index.html">
-        <div class="card pink">
-            <div>[圖片]</div>
-            <div class="card-title">造型品</div>
-            <div class="card-desc">蓬鬆 · 線條 · 捲度</div>
-        </div>
-    </a>
+    <div class="card">
+      <div class="card-title">居家組合</div>
+      <div class="card-sub">優惠洗護組 / 保養套組</div>
+    </div>
 
-    <a href="homecare/index.html">
-        <div class="card blue">
-            <div>[圖片]</div>
-            <div class="card-title">居家保養組合</div>
-            <div class="card-desc">最划算的居家配套</div>
-        </div>
-    </a>
-
-</div>
+  </div>
 
 </div>
 </body>
