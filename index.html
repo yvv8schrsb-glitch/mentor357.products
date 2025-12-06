@@ -1,119 +1,120 @@
 <!DOCTYPE html>
 <html lang="zh-Hant">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>曼都板新店 Hair · 購物商城</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>曼都板新店 Hair ・ 購物商城</title>
+
+<!-- 可愛韓系字體 -->
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700&family=Nunito:wght@600;700&display=swap" rel="stylesheet">
 
 <style>
-  body {
-    font-family: "Noto Sans TC", sans-serif;
-    margin: 0;
-    padding: 0;
-    background: #FFF9F3; /* 奶油米白 */
-  }
+    body {
+        margin: 0;
+        padding: 0;
+        font-family: 'Noto Sans TC', sans-serif;
+        background: #FFF9F3; /* 奶油色 */
+        color: #5B4636;
+    }
 
-  .hero {
-    width: 100%;
-    height: 240px;
-    background: #e8e0d7;
-    background-size: cover;
-    background-position: center;
-    border-bottom: 3px solid #d8cfc4;
-  }
+    .header {
+        text-align: center;
+        padding: 20px 0 10px;
+        font-family: 'Nunito', sans-serif;
+    }
 
-  .container {
-    width: 90%;
-    margin: auto;
-    padding: 25px 0;
-  }
+    .header h1 {
+        font-size: 26px;
+        font-weight: 700;
+        margin-bottom: 5px;
+    }
 
-  h1 {
-    font-size: 26px;
-    color: #6b4f3f;
-    text-align: center;
-    margin-bottom: 5px;
-  }
+    .subtext {
+        font-size: 15px;
+        color: #8A7563;
+        margin-bottom: 15px;
+    }
 
-  p.subtitle {
-    text-align: center;
-    font-size: 14px;
-    color: #9b8b7c;
-    margin-bottom: 30px;
-  }
+    .notice {
+        font-size: 14px;
+        margin-top: 5px;
+        color: #C07A5A;
+    }
 
-  .card {
-    background: #ffffff;
-    border-radius: 14px;
-    padding: 20px;
-    margin-bottom: 18px;
-    box-shadow: 0 3px 10px rgba(0,0,0,0.08);
-    text-align: center;
-    transition: 0.2s;
-  }
+    .banner-img {
+        width: 90%;
+        display: block;
+        margin: 5px auto 20px;
+        border-radius: 15px;
+        box-shadow: 0px 4px 10px rgba(0,0,0,0.08);
+    }
 
-  .card:hover {
-    transform: scale(1.02);
-  }
+    .card {
+        width: 85%;
+        background: white;
+        margin: 18px auto;
+        padding: 20px;
+        border-radius: 18px;
+        box-shadow: 0px 4px 10px rgba(0,0,0,0.06);
+        text-align: center;
+        transition: 0.15s;
+    }
 
-  .card-title {
-    font-size: 20px;
-    color: #6b4f3f;
-    margin-bottom: 8px;
-    font-weight: bold;
-  }
+    .card:hover {
+        transform: scale(1.03);
+    }
 
-  .card-desc {
-    font-size: 14px;
-    color: #9b8b7c;
-  }
+    .card-title {
+        font-size: 20px;
+        font-weight: 700;
+    }
 
-  a {
-    text-decoration: none;
-  }
+    .card-desc {
+        font-size: 14px;
+        color: #8A7563;
+        margin-top: 6px;
+    }
 </style>
+
 </head>
 <body>
 
-<!--⚡ 店家大合照 Banner（之後換成妳圖片網址） -->
-<div class="hero" style="background-image:url('PUT-YOUR-IMAGE-URL-HERE');"></div>
+<!-- 標題區 -->
+<div class="header">
+    <h1>曼都板新店 Hair ・ 購物商城</h1>
+    <div class="subtext">所有商品一眼看完♡ 取貨簡單又方便！</div>
+    <div class="notice">（網站營運中，目前僅提供「店內取貨」）</div>
+</div>
 
-<div class="container">
-  <h1>曼都板新店 Hair 購物商城</h1>
-  <p class="subtitle">所有商品一次看、店內取貨最方便 ♡</p>
+<!-- 首頁大圖（請上傳照片後更換路徑） -->
+<img src="group.jpg" class="banner-img" alt="曼都板新店 團隊照片">
+<!-- ↑ 把 group.jpg 換成你上傳的圖片檔案名稱 -->
 
-  <!-- 卡片：年度暢銷 -->
-  <a href="best.html">
-    <div class="card">
-      <div class="card-title">年度暢銷</div>
-      <div class="card-desc">年度熱銷排行 · 必買精選</div>
+<!-- 區塊 1 -->
+<div class="card">
+    <div class="card-title">年度暢銷</div>
+    <div class="card-desc">年度熱銷排行 · 必買精選</div>
+</div>
+
+<!-- 區塊 2 -->
+<div class="card">
+    <div class="card-title">門市資訊</div>
+    <div class="card-desc">
+        曼都板新店 · 板橋區長安街331巷24號<br>
+        📞 02–8953–6681
     </div>
-  </a>
+</div>
 
-  <!-- 卡片：門市資訊 -->
-  <a href="store.html">
-    <div class="card">
-      <div class="card-title">門市資訊</div>
-      <div class="card-desc">曼都板新店 · 板橋區長安街331巷24號<br>☎ 02-8953-6681</div>
-    </div>
-  </a>
+<!-- 區塊 3 -->
+<div class="card">
+    <div class="card-title">最新商品</div>
+    <div class="card-desc">最新到貨 · 第一時間上架</div>
+</div>
 
-  <!-- 卡片：最新商品 -->
-  <a href="new.html">
-    <div class="card">
-      <div class="card-title">最新商品</div>
-      <div class="card-desc">最新到貨 · 第一時間上架</div>
-    </div>
-  </a>
-
-  <!-- 卡片：本月活動 -->
-  <a href="event.html">
-    <div class="card">
-      <div class="card-title">本月活動</div>
-      <div class="card-desc">每月精選優惠 · 限時搶購</div>
-    </div>
-  </a>
-
+<!-- 區塊 4 -->
+<div class="card">
+    <div class="card-title">本月活動</div>
+    <div class="card-desc">每月精選優惠 · 限時搶購</div>
 </div>
 
 </body>
