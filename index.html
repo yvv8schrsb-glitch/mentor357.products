@@ -1,199 +1,118 @@
 <!DOCTYPE html>
 <html lang="zh-Hant">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>板新店 · 商品專區</title>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>曼都板新店 Hair · 購物商城</title>
 
 <style>
   body {
     font-family: "Noto Sans TC", sans-serif;
     margin: 0;
-    background: #FFF9F0;
+    padding: 0;
+    background: #FFF9F3; /* 奶油米白 */
   }
 
-  /* ====== 左上漢堡按鈕 ====== */
-  .menu-btn {
-    position: fixed;
-    top: 18px;
-    left: 18px;
-    font-size: 28px;
-    color: #6B5E55;
-    cursor: pointer;
-    z-index: 9999;
-  }
-
-  /* ====== 側邊滑出選單 ====== */
-  .side-menu {
-    position: fixed;
-    top: 0;
-    left: -70%;
-    width: 70%;
-    height: 100%;
-    background: #FFF9F0;
-    box-shadow: 3px 0 15px rgba(0,0,0,0.15);
-    padding: 20px;
-    transition: 0.3s;
-    z-index: 9998;
-  }
-
-  .menu-header {
-    font-size: 20px;
-    font-weight: 700;
-    padding-bottom: 20px;
-    color: #6C5840;
-  }
-
-  .side-menu a {
-    display: block;
-    padding: 14px 0;
-    color: #5A4A42;
-    text-decoration: none;
-    font-size: 18px;
-    border-bottom: 1px solid #F1E7DA;
-  }
-
-  .side-menu a:hover {
-    color: #B98A65;
-  }
-
-  /* 遮罩 */
-  .overlay {
-    position: fixed;
-    top: 0;
-    left: 0;
+  .hero {
     width: 100%;
-    height: 100%;
-    background: rgba(0,0,0,0.4);
-    opacity: 0;
-    pointer-events: none;
-    transition: 0.3s;
-    z-index: 9990;
+    height: 240px;
+    background: #e8e0d7;
+    background-size: cover;
+    background-position: center;
+    border-bottom: 3px solid #d8cfc4;
   }
 
-  /* ====== 首頁內容 ====== */
   .container {
     width: 90%;
     margin: auto;
-    text-align: center;
-    padding: 80px 0 40px; /* 預留漢堡選單空間 */
+    padding: 25px 0;
   }
 
   h1 {
     font-size: 26px;
-    font-weight: 600;
-    margin-bottom: 10px;
-    color: #5A4A42;
+    color: #6b4f3f;
+    text-align: center;
+    margin-bottom: 5px;
   }
 
-  p.sub {
+  p.subtitle {
+    text-align: center;
     font-size: 14px;
-    color: #7A6F69;
+    color: #9b8b7c;
     margin-bottom: 30px;
   }
 
-  /* 分類卡片 */
-  .grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 18px;
+  .card {
+    background: #ffffff;
+    border-radius: 14px;
+    padding: 20px;
+    margin-bottom: 18px;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.08);
+    text-align: center;
+    transition: 0.2s;
   }
 
-  .card {
-    background: #FFFFFF;
-    border-radius: 12px;
-    padding: 20px 10px;
-    box-shadow: 0 3px 10px rgba(0,0,0,0.07);
+  .card:hover {
+    transform: scale(1.02);
   }
 
   .card-title {
-    font-size: 18px;
-    font-weight: 600;
-    margin-bottom: 6px;
-    color: #4A3F39;
+    font-size: 20px;
+    color: #6b4f3f;
+    margin-bottom: 8px;
+    font-weight: bold;
   }
 
-  .card-sub {
-    font-size: 13px;
-    color: #857a74;
+  .card-desc {
+    font-size: 14px;
+    color: #9b8b7c;
   }
 
-  @media (max-width: 420px) {
-    .grid {
-      grid-template-columns: 1fr;
-    }
+  a {
+    text-decoration: none;
   }
 </style>
-
 </head>
-
 <body>
 
-<!-- 🔥 左上漢堡按鈕 -->
-<div class="menu-btn" onclick="toggleMenu()">☰</div>
+<!--⚡ 店家大合照 Banner（之後換成妳圖片網址） -->
+<div class="hero" style="background-image:url('PUT-YOUR-IMAGE-URL-HERE');"></div>
 
-<!-- 🔥 側邊滑出選單（已改成店長推薦） -->
-<div id="sideMenu" class="side-menu">
-  <div class="menu-header">板新店 商品分類</div>
-
-  <a href="#">✨ 最新商品</a>
-  <a href="#">🔥 熱銷排行</a>
-  <a href="#">🧴 頭皮保養</a>
-  <a href="#">🫧 洗護髮</a>
-  <a href="#">💇‍♀️ 造型品</a>
-  <a href="#">🎁 居家組合</a>
-  <a href="#">⭐ 店長推薦</a>
-  <a href="#">📍 門市資訊</a>
-</div>
-
-<div id="overlay" class="overlay" onclick="toggleMenu()"></div>
-
-<script>
-function toggleMenu() {
-  const menu = document.getElementById("sideMenu");
-  const overlay = document.getElementById("overlay");
-
-  if (menu.style.left === "0px") {
-    menu.style.left = "-70%";
-    overlay.style.opacity = "0";
-    overlay.style.pointerEvents = "none";
-  } else {
-    menu.style.left = "0px";
-    overlay.style.opacity = "1";
-    overlay.style.pointerEvents = "auto";
-  }
-}
-</script>
-
-<!-- ====== 首頁主要內容 ====== -->
 <div class="container">
+  <h1>曼都板新店 Hair 購物商城</h1>
+  <p class="subtitle">所有商品一次看、店內取貨最方便 ♡</p>
 
-  <h1>板新店 · 商品專區</h1>
-  <p class="sub">目前僅提供「店內取貨」，無宅配服務喔(´▽`)ﾉ</p>
-
-  <div class="grid">
-    
+  <!-- 卡片：年度暢銷 -->
+  <a href="best.html">
     <div class="card">
-      <div class="card-title">頭皮保養</div>
-      <div class="card-sub">出油、敏感、頭皮癢專區</div>
+      <div class="card-title">年度暢銷</div>
+      <div class="card-desc">年度熱銷排行 · 必買精選</div>
     </div>
+  </a>
 
+  <!-- 卡片：門市資訊 -->
+  <a href="store.html">
     <div class="card">
-      <div class="card-title">洗護髮</div>
-      <div class="card-sub">洗髮＋護髮保養系列</div>
+      <div class="card-title">門市資訊</div>
+      <div class="card-desc">曼都板新店 · 板橋區長安街331巷24號<br>☎ 02-8953-6681</div>
     </div>
+  </a>
 
+  <!-- 卡片：最新商品 -->
+  <a href="new.html">
     <div class="card">
-      <div class="card-title">造型品</div>
-      <div class="card-sub">油蠟、霧面、造型噴霧</div>
+      <div class="card-title">最新商品</div>
+      <div class="card-desc">最新到貨 · 第一時間上架</div>
     </div>
+  </a>
 
+  <!-- 卡片：本月活動 -->
+  <a href="event.html">
     <div class="card">
-      <div class="card-title">居家組合</div>
-      <div class="card-sub">優惠洗護組 / 保養套組</div>
+      <div class="card-title">本月活動</div>
+      <div class="card-desc">每月精選優惠 · 限時搶購</div>
     </div>
-
-  </div>
+  </a>
 
 </div>
 
